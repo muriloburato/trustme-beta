@@ -70,30 +70,30 @@ npm run ios      # Para iOS (apenas no macOS)
 ##  Funcionalidades
 
 ### Para Usuários (App Mobile)
-- ✅ Cadastro e autenticação
-- ✅ Upload de múltiplas fotos do tênis
-- ✅ Preenchimento de informações detalhadas (marca, modelo, tamanho, etc.)
-- ✅ Acompanhamento do status da avaliação
-- ✅ Histórico de itens enviados
-- ✅ Visualização de resultados detalhados
-- ✅ Pagar por avaliaçoes
+- Cadastro e autenticação
+- Upload de múltiplas fotos do tênis
+- Preenchimento de informações detalhadas (marca, modelo, tamanho, etc.)
+- Acompanhamento do status da avaliação
+- Histórico de itens enviados
+- Visualização de resultados detalhados
+- Pagar por avaliaçoes
 
 ### Para Especialistas (Painel Web)
-- ✅ Login administrativo
-- ✅ Dashboard com estatísticas
-- ✅ Lista de itens pendentes de avaliação
-- ✅ Interface de avaliação com:
+- Login administrativo
+- Dashboard com estatísticas
+-  Lista de itens pendentes de avaliação
+- Interface de avaliação com:
   - Visualização de múltiplas imagens
   - Sistema de classificação (Autêntico/Falsificado/Inconclusivo)
   - Campo para observações
-- ✅ Histórico de avaliações realizadas
-- ✅ Relatórios e métricas
+- Histórico de avaliações realizadas
+- Relatórios e métricas
 
 ### Para o Público Geral
-- ✅ Página pública com itens avaliados
-- ✅ Filtros por status e busca
-- ✅ Transparência nas avaliações (Com comentarios)
-- ✅ Detalhes completos dos itens (sem dados pessoais)
+-  Página pública com itens avaliados
+- Filtros por status e busca
+- Transparência nas avaliações (Com comentarios)
+- Detalhes completos dos itens (sem dados pessoais)
 
 ##  Estrutura do Banco de Dados
 
