@@ -1,10 +1,10 @@
 # TrustMe - Plataforma de Verificação de Autenticidade
 
-Uma plataforma completa para verificação de autenticidade de tênis, onde usuários enviam fotos através de um aplicativo mobile e especialistas avaliam através de um painel web administrativo.
+Esqueleto do Projeto TrustMe - em fase de testes, avaliacoes & implementacoes.
 
-## 🏗️ Arquitetura do Sistema
+##  Arquitetura do Sistema
 
-O TrustMe é composto por três componentes principais:
+O TrustMe é composto por três repos principais:
 
 ### 1. **Backend API** (`/backend`)
 - **Tecnologia**: Node.js + Express.js
@@ -29,7 +29,7 @@ O TrustMe é composto por três componentes principais:
   - Upload de fotos de tênis
   - Acompanhamento de avaliações
 
-## 🚀 Instalação e Configuração
+## Instalação
 
 ### Pré-requisitos
 - Node.js 18+ 
@@ -67,7 +67,7 @@ npm run android  # Para Android
 npm run ios      # Para iOS (apenas no macOS)
 ```
 
-## 📱 Funcionalidades
+##  Funcionalidades
 
 ### Para Usuários (App Mobile)
 - ✅ Cadastro e autenticação
@@ -76,6 +76,7 @@ npm run ios      # Para iOS (apenas no macOS)
 - ✅ Acompanhamento do status da avaliação
 - ✅ Histórico de itens enviados
 - ✅ Visualização de resultados detalhados
+- ✅ Pagar por avaliaçoes
 
 ### Para Especialistas (Painel Web)
 - ✅ Login administrativo
@@ -84,7 +85,6 @@ npm run ios      # Para iOS (apenas no macOS)
 - ✅ Interface de avaliação com:
   - Visualização de múltiplas imagens
   - Sistema de classificação (Autêntico/Falsificado/Inconclusivo)
-  - Nível de confiança (1-100%)
   - Campo para observações
 - ✅ Histórico de avaliações realizadas
 - ✅ Relatórios e métricas
@@ -92,10 +92,10 @@ npm run ios      # Para iOS (apenas no macOS)
 ### Para o Público Geral
 - ✅ Página pública com itens avaliados
 - ✅ Filtros por status e busca
-- ✅ Transparência nas avaliações
+- ✅ Transparência nas avaliações (Com comentarios)
 - ✅ Detalhes completos dos itens (sem dados pessoais)
 
-## 🗄️ Estrutura do Banco de Dados
+##  Estrutura do Banco de Dados
 
 ### Tabelas Principais
 
@@ -118,12 +118,12 @@ npm run ios      # Para iOS (apenas no macOS)
 - `id`, `itemId`, `evaluatorId`, `result`, `confidence`, `notes`
 - `createdAt`, `updatedAt`
 
-## 🔐 API Endpoints
+##  API Endpoints
 
 ### Autenticação
-- `POST /api/auth/register` - Cadastro de usuário
+- `POST /api/auth/register` - Cadastro de usuario
 - `POST /api/auth/login` - Login
-- `GET /api/auth/me` - Dados do usuário logado
+- `GET /api/auth/me` - Dados do usuario logado
 
 ### Itens
 - `POST /api/items` - Criar item (com upload de imagens)
@@ -133,19 +133,19 @@ npm run ios      # Para iOS (apenas no macOS)
 - `GET /api/items/stats` - Estatísticas (admin)
 
 ### Avaliações
-- `POST /api/evaluations` - Criar avaliação (admin)
+- `POST /api/evaluations` - Criar avaliaçao (admin)
 - `GET /api/evaluations/my-evaluations` - Avaliações do especialista
 - `GET /api/evaluations/stats` - Estatísticas de avaliações
 
 ### Usuários
 - `GET /api/users/stats` - Estatísticas de usuários (admin)
 
-## 🎨 Design e UX
+##  Design e UX
 
 ### Painel Web
 - **Design System**: Baseado em shadcn/ui com Tailwind CSS
 - **Tema**: Modo claro com cores neutras e acentos em azul
-- **Responsividade**: Totalmente responsivo para desktop e mobile
+- **Responsividade**: Totalmente responsivo para desktop & mobile (Painel ADM sera apenas WEB)
 - **Acessibilidade**: Componentes acessíveis com navegação por teclado
 
 ### App Mobile
@@ -154,21 +154,22 @@ npm run ios      # Para iOS (apenas no macOS)
 - **UI**: Componentes nativos otimizados
 - **Câmera**: Integração nativa para captura de fotos
 
-## 🔒 Segurança
+##  Segurança
 
 - **Autenticação JWT**: Tokens seguros com expiração
 - **Validação de Dados**: Validação tanto no frontend quanto backend
 - **Upload Seguro**: Validação de tipos e tamanhos de arquivo
 - **Controle de Acesso**: Middleware de autorização por roles
 - **Sanitização**: Prevenção contra XSS e SQL Injection
+- **Ainda em fase de estudos para melhoria.
 
-## 📊 Monitoramento e Logs
+##  Monitoramento e Logs
 
 - **Health Check**: Endpoint `/api/health` para verificação do status
 - **Logs Estruturados**: Sistema de logs para debugging
 - **Métricas**: Estatísticas em tempo real no dashboard admin
 
-## 🚀 Deploy e Produção
+##  Deploy e Produção
 
 ### Backend
 - Configurar variáveis de ambiente (.env)
@@ -187,7 +188,7 @@ npm run ios      # Para iOS (apenas no macOS)
 - Deploy nas lojas (App Store/Google Play)
 - Configurar deep links e notificações push
 
-## 🧪 Testes
+## Testes
 
 ### Backend
 ```bash
@@ -201,26 +202,27 @@ cd web
 pnpm test
 ```
 
-## 📝 Próximos Passos
+##  Próximos Passos
 
-### Melhorias Sugeridas
+### Melhorias & Integracoes
 1. **Notificações Push**: Avisar usuários sobre status das avaliações
 2. **Sistema de Rating**: Avaliação dos especialistas pelos usuários
 3. **IA/ML**: Pré-análise automática para auxiliar especialistas
 4. **Relatórios Avançados**: Dashboards com mais métricas
 5. **API Pública**: Endpoints para integração com terceiros
 6. **Chat/Suporte**: Sistema de comunicação entre usuários e especialistas
+6. **Integracoes**: Integrar o App mobile que esta sendo desenvolvido ao Backend / Web
 
 ### Otimizações Técnicas
 1. **Cache**: Implementar Redis para cache de dados
-2. **CDN**: Usar CDN para servir imagens
+2. **CDN**: Usar CDN para servir imagens e reduzir o armazenamento
 3. **Compressão**: Otimizar imagens automaticamente
 4. **Monitoramento**: Implementar APM (Application Performance Monitoring)
 5. **Backup**: Sistema automatizado de backup do banco
 
-## 👥 Equipe e Contribuição
+## Equipe e Contribuição
 
-Este projeto foi desenvolvido como uma solução completa para verificação de autenticidade de produtos, focando inicialmente em tênis esportivos.
+Este esta sendo desenvolvido como metodo de aprendizado, e com pretencao de ser um projeto REAL.
 
 ### Estrutura de Pastas
 ```
@@ -244,12 +246,9 @@ trustme/
     └── api.js        # Cliente da API
 ```
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 ---
 
-**TrustMe** - Verificação de Autenticidade Confiável 🛡️
+**TrustMe** - Verificação de Autenticidade Confiável! 🛡️
 
 
